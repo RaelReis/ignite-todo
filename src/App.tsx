@@ -3,8 +3,10 @@ import { useState, ChangeEvent, FormEvent } from "react";
 import { Header } from "./components/Header";
 import { CreateTaskForm } from "./components/CreateTaskForm";
 import { TaskList } from "./components/TaskList";
+import { v4 as uui } from "uuid";
 
 export interface TaskInterface {
+  id: string;
   description: string;
   completed: boolean;
 }
@@ -20,7 +22,7 @@ function App() {
   function handleCreateTask(event: FormEvent) {
     event.preventDefault();
     if (newTask.length > 0) {
-      setTaskList((currenState) => [...currenState, { description: newTask, completed: false }]);
+      setTaskList((currenState) => [...currenState, { id: uui(), description: newTask, completed: false }]);
       setNewTask("");
     }
   }

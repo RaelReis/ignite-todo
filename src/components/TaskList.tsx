@@ -10,7 +10,12 @@ interface TaskListProps {
 }
 
 export function TaskList({ list, onCheckBoxClick, onDeleteTask }: TaskListProps) {
-  const completedTasks = list.filter((task) => task.completed).length;
+  const completedTasks = list.reduce((ac, task) => {
+    if (task.completed) {
+      return (ac += 1);
+    }
+    return ac;
+  }, 0);
 
   return (
     <main className={styles.taskList}>
@@ -28,7 +33,7 @@ export function TaskList({ list, onCheckBoxClick, onDeleteTask }: TaskListProps)
         {list.length > 0 ? (
           list.map((task, index) => (
             <Task
-              key={task.description}
+              key={task.id}
               data={task}
               taskIndex={index}
               onCheckBoxClick={onCheckBoxClick}

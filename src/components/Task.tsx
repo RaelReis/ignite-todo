@@ -1,8 +1,7 @@
-import { Trash, Check } from "phosphor-react";
-import checkBoxTrue from "../assets/img/checkbox_true.svg";
-import checkBoxFalse from "../assets/img/checkbox_false.svg";
 import styles from "./Task.module.css";
 import { TaskInterface } from "../App";
+import { Trash } from "phosphor-react";
+import checkedIcon from "../assets/img/checked_icon.svg";
 
 interface TaskProps {
   data: TaskInterface;
@@ -22,7 +21,12 @@ export function Task({ data, taskIndex, onCheckBoxClick, onDeleteTask }: TaskPro
 
   return (
     <li className={styles.task}>
-      <input type="checkbox" name="checkbox" checked={data.completed} onClick={checkCompleteTask} />
+      <div className={styles.checkBoxWrapper}>
+        <input type="checkbox" name="checkbox" checked={data.completed} onChange={checkCompleteTask} />
+        <label htmlFor="checkbox" title="checkbox">
+          {data.completed && <img src={checkedIcon} alt="Icone de checkbox" />}
+        </label>
+      </div>
       <p className={`${styles.taskDescription} ${data.completed ? styles.completed : ""}`}>{data.description}</p>
       <button title="deletar" className={styles.trashButton} onClick={deleteTask}>
         <Trash size={20} />
