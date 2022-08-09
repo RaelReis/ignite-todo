@@ -1,0 +1,42 @@
+.createTaskForm {
+  width: 100%;
+  display: flex;
+  gap: .8rem;
+  margin-top: -2.6rem;
+}
+
+.createTaskForm input {
+  flex: 1;
+  padding: 1.6rem;
+  background-color: var(--gray-500);
+  color: var(--gray-300);
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  color: var(--gray-100);
+}
+
+.createTaskForm input:focus {
+  border: 1px solid var(--purple-dark);
+}
+
+.createTaskForm button {
+  padding: 1.6rem;
+  background-color: var(--blue-dark);
+  color: var(--gray-100);
+  font-size: 1.4;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  transition: bacgronud-color .2s;
+}
+
+.createTaskForm button:hover {
+  background-color: var(--blue);
+}
+
+.createTaskForm button svg {
+  margin-left: 0.8rem;
+}

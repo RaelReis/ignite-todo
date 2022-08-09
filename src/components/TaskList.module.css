@@ -1,0 +1,71 @@
+.taskList {
+  margin-top: 6.4rem;
+  padding-bottom: 2rem;
+}
+
+.taskList header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.createdTaskCount,
+.completedTaskCount {
+  display: flex;
+  align-items: center;
+}
+
+.createdTaskCount > span {
+  color: var(--blue);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.completedTaskCount > span {
+  color: var(--purple);
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.createdTaskCount :nth-child(2),
+.completedTaskCount :nth-child(2) {
+  margin-left: 0.8rem;
+  background-color: var(--gray-400);
+  border-radius: 99px;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--gray-100);
+  font-size: 1.4rem;
+}
+
+.content {
+  min-height: 24rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+  margin-top: 2.4rem;
+}
+
+.noTaskFoundBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.noTaskFoundBox img {
+  margin-bottom: 1.6rem;
+}
+
+.noTaskFoundBox > span {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--gray-300);
+}
+
+.noTaskFoundBox span + span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--gray-300);
+}
